@@ -7,7 +7,7 @@ const prisma = new PrismaClient();
 const app = express();
 
 const corsOptions = {
-  origin: ['https://testt-frontend.vercel.app', 'http://localhost:3000'],
+  origin: ['https://testt-frontend.vercel.app', 'http://localhost:5173'],
   optionsSuccessStatus: 200
 };
 
