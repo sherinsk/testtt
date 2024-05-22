@@ -6,7 +6,12 @@ const cors = require('cors');
 const prisma = new PrismaClient();
 const app = express();
 
-app.use(cors());
+const corsOptions = {
+  origin: 'https://testt-frontend.vercel.app',
+  optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
 
 app.use(bodyParser.json());
 
@@ -37,7 +42,7 @@ app.get('/students', async (req, res) => {
 
 app.get('/students/:id', async (req, res) => {
   const { id } = req.params;
-  try {
+  try {it 
     const student = await prisma.student.findUnique({
       where: { id: Number(id) },
     });
